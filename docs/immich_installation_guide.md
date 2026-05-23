@@ -119,12 +119,24 @@ Open the container config again:
 ```bash
 nano /etc/pve/lxc/100.conf
 ```
+> Execute this command on the Proxmox host node.
 
 Add:
 
 ```ini
-lxc.idmap: u 0 100000 65536
-lxc.idmap: g 0 100000 65536
+mp0: /mnt/ssd1/immich,mp=/mnt/immich
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.mount.auto: proc:rw sys:rw
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+```
+
+Find:
+```
+unprivileged: 1
+```
+Change it to:
+```
+unprivileged: 0
 ```
 
 Save and exit.
@@ -402,18 +414,29 @@ immich
 
 # Fix folder permissions
 
-Depending on the UID/GID mapping setup, permissions may need adjustment on the Proxmox host.
+Since the container is now running in **privileged** mode, standard Linux permissions can be used.
 
-Example fix:
+Run on the Proxmox host:
 
 ```bash
-chown -R 101000:101000 /mnt/ssd1/immich
+chown -R root:root /mnt/ssd1/immich
+chmod -R 775 /mnt/ssd1/immich
 ```
 
 > Execute this command on the Proxmox host node.
 
-This grants the unprivileged container permission to write to the mounted storage.
+This ensures the container has proper read/write access to the mounted storage.
 
+## Verify Permissions
+
+Run:
+```
+ls -ld /mnt/ssd1/immich
+```
+Expected example output:
+```
+drwxrwxr-x root root /mnt/ssd1/immich
+```
 ---
 
 # Restart Immich containers
@@ -430,7 +453,10 @@ Verify status:
 ```bash
 docker compose ps
 ```
-
+All Immich services should show:
+```
+Up
+```
 ---
 
 # Final verification
