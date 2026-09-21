@@ -62,7 +62,7 @@ Locate the correct SSD identifier.
 Example:
 
 ```text
-nvme-MSI_M470_PRO_1TB_511251002084004416-part1
+nvme-MSI_M470_PRO_1TB_511xxxxxxxxxxxxxxx-part1
 ```
 
 ---
@@ -72,7 +72,7 @@ nvme-MSI_M470_PRO_1TB_511251002084004416-part1
 Example command:
 
 ```bash
-mount /dev/disk/by-id/nvme-MSI_M470_PRO_1TB_511251002084004416-part1 /mnt/ssd1
+mount /dev/disk/by-id/nvme-MSI_M470_PRO_1TB_511xxxxxxxxxxxxxxx-part1 /mnt/ssd1
 ```
 
 This mounts the SSD temporarily.
@@ -98,7 +98,7 @@ nano /etc/fstab
 Add the following line to the end of the file:
 
 ```fstab
-/dev/disk/by-id/nvme-MSI_M470_PRO_1TB_511251002084004416-part1  /mnt/ssd1  ext4  defaults,noatime,discard  0  2
+/dev/disk/by-id/nvme-MSI_M470_PRO_1TB_511xxxxxxxxxxxxxxx-part1  /mnt/ssd1  ext4  defaults,noatime,discard  0  2
 ```
 > Remember to change the disk ID found in previous step.
 
@@ -170,6 +170,8 @@ Click on the Reboot button on the proxmox node.
 
 After reboot, verify the SSD mounts automatically.
 
+![disk partition](assets/partitions_on_proxmox.jpg)
+
 ---
 
 # Optional — Install duf for better disk visibility
@@ -193,6 +195,7 @@ apt update && apt install duf -y
 ```bash
 duf
 ```
+![duf](assets/duf.jpg)
 
 This displays:
 
