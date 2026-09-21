@@ -45,8 +45,9 @@ Recommended USB size: **8 GB or larger**
 ---
 
 ## Start the Proxmox Installer
+![installer](assets/proxmox_installer.jpeg)
 
-1. Select **Install Proxmox VE**
+1. Select **Install Proxmox VE**   (I chose terminal option!)
 2. Accept the license agreement
 3. Continue through the installer
 
@@ -150,6 +151,7 @@ Example:
 ```text
 https://192.168.1.50:8006
 ```
+![proxmox_login](assets/proxmox_login.jpg)
 
 You may receive a browser security warning due to the default self-signed certificate.
 
@@ -172,4 +174,4 @@ You should now have:
 * Network connectivity configured
 * A ready platform for VMs, LXC containers, and services like Immich
 
-
+![proxmox_login](assets/network_on_proxmox.jpg)

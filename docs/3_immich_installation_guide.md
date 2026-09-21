@@ -311,9 +311,9 @@ Replace the default database password with a stronger **alphanumeric** password.
 Example:
 
 ```env
-DB_PASSWORD=StrongPassword123
+DB_PASSWORD=<StrongPassword123>
 ```
-
+![immich env file](assets/immich_env.jpg)
 ---
 
 # Start Immich using docker compose
@@ -335,6 +335,7 @@ Retrieve the LXC IP address from:
 ```text
 Proxmox Web UI → LXC Container → Summary
 ```
+![immich welcome page](assets/immich_ip.jpg)
 
 Immich default port:
 
@@ -350,6 +351,7 @@ http://192.168.1.1:2283
 
 If the page loads successfully, the deployment is working.
 
+![immich welcome page](assets/welcome_to_immich.jpg)
 ---
 
 # Verify docker containers
@@ -479,3 +481,8 @@ You can now **over LAN**:
 * Enable mobile backups
 * Configure users and albums
 * Use AI-powered search and facial recognition
+
+
+
+
+

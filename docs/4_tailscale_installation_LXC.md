@@ -157,6 +157,8 @@ You can now retrieve:
 * Assigned Tailscale IP
 * MagicDNS hostname
 
+![tailscale dashboard](assets/tailscale_dashboard.jpg)
+
 ---
 
 # Access Immich through Tailscale
@@ -192,6 +194,8 @@ Complete:
 * User setup
 * Mobile backup preferences
 
+After setting up immich client, it will look like:
+![immich landing page](assets/first_landing_immich_page.jpg)
 ---
 
 # Install the mobile apps
