@@ -8,6 +8,6 @@ This project lets me explore the world of self managed servers, in my case a sto
 ## Guidelines
 
 In order to systematically set up the server, I have split the steps I followed into a few groups and have listed them under:
-````
-(/docs)
-````
+
+[/docs](/docs)
+
