@@ -134,6 +134,12 @@ This displays:
 * Assigned IP addresses
 * Bridge interfaces (typically `vmbr0`)
 
+More information can be found from the interface config, by running:
+
+```
+nano /etc/network/interfaces
+```
+
 Locate the IP address assigned to the Proxmox host.
 
 ---
